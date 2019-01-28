@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  mysql-nodeport-dev
+spec:
+  selector:
+    app:  wordpress
+    tier: mysql
+  type:  NodePort
+  ports:
+  - name:  mysql-port-dev
+    port:  3306
+    targetPort:  3306
+    nodePort: 30081

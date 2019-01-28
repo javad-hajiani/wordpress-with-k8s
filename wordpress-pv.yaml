@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: wordpress-pv
+  labels:
+    tier: frontend
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/opt/wordpress/"
